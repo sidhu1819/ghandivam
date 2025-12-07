@@ -93,6 +93,10 @@ const Register = () => {
   };
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     <div className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -108,6 +112,15 @@ const Register = () => {
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative z-10 interactive-card">
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg floating">
+<<<<<<< HEAD
+=======
+=======
+    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)' }}>
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             <UserPlus className="text-white" size={32} />
           </div>
           <h1 className="text-3xl font-bold text-black mb-2">

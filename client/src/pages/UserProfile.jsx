@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import { useLanguage } from '../context/LanguageContext';
+=======
+<<<<<<< HEAD
+import { useLanguage } from '../context/LanguageContext';
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 import { User, Award, Star, CheckCircle, Users, MessageSquare, UserPlus, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 
@@ -9,7 +16,14 @@ const UserProfile = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user: currentUser } = useAuth();
+<<<<<<< HEAD
   const { t } = useLanguage();
+=======
+<<<<<<< HEAD
+  const { t } = useLanguage();
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [connecting, setConnecting] = useState(false);
@@ -33,10 +47,23 @@ const UserProfile = () => {
     setConnecting(true);
     try {
       await axios.post(`http://localhost:5000/api/users/${id}/connect`);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       alert(t('connectionRequestSent'));
       fetchUser();
     } catch (error) {
       alert(error.response?.data?.error || t('failedToSendConnection'));
+<<<<<<< HEAD
+=======
+=======
+      alert('Connection request sent!');
+      fetchUser();
+    } catch (error) {
+      alert(error.response?.data?.error || 'Failed to send connection request');
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     } finally {
       setConnecting(false);
     }
@@ -54,7 +81,15 @@ const UserProfile = () => {
     return (
       <div className="p-6 max-w-4xl mx-auto">
         <div className="text-center py-12">
+<<<<<<< HEAD
           <p className="text-black">{t('loadingProfile')}</p>
+=======
+<<<<<<< HEAD
+          <p className="text-black">{t('loadingProfile')}</p>
+=======
+          <p className="text-black">Loading profile...</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
       </div>
     );
@@ -64,13 +99,25 @@ const UserProfile = () => {
     return (
       <div className="p-6 max-w-4xl mx-auto">
         <div className="text-center py-12">
+<<<<<<< HEAD
           <p className="text-black">{t('userNotFound')}</p>
+=======
+<<<<<<< HEAD
+          <p className="text-black">{t('userNotFound')}</p>
+=======
+          <p className="text-black">User not found</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
       </div>
     );
   }
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     <div className="p-6 max-w-4xl mx-auto relative min-h-screen">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -102,6 +149,25 @@ const UserProfile = () => {
           <div className="bg-white p-2 rounded-full shadow-lg floating">
             <div className="h-24 w-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
               <User size={40} className="text-white"/>
+<<<<<<< HEAD
+=======
+=======
+    <div className="p-6 max-w-4xl mx-auto">
+      <button
+        onClick={() => navigate(-1)}
+        className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6"
+      >
+        <ArrowLeft size={20} /> Back
+      </button>
+
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-6">
+        <div className="bg-slate-800 h-32"></div>
+        <div className="px-8 pb-8 flex flex-col md:flex-row items-end -mt-12 gap-6">
+          <div className="bg-white p-2 rounded-full">
+            <div className="h-24 w-24 bg-gray-300 rounded-full flex items-center justify-center">
+              <User size={40} className="text-gray-600"/>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             </div>
           </div>
           <div className="flex-1">
@@ -111,7 +177,15 @@ const UserProfile = () => {
           </div>
           
           <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl text-center min-w-[150px]">
+<<<<<<< HEAD
             <p className="text-sm text-blue-600 font-bold uppercase tracking-wider">{t('trustPoints')}</p>
+=======
+<<<<<<< HEAD
+            <p className="text-sm text-blue-600 font-bold uppercase tracking-wider">{t('trustPoints')}</p>
+=======
+            <p className="text-sm text-blue-600 font-bold uppercase tracking-wider">Trust Points</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             <div className="text-4xl font-black text-blue-700 flex items-center justify-center gap-2">
               <Award size={32} /> {user.trustPoints || 100}
             </div>
@@ -122,7 +196,15 @@ const UserProfile = () => {
               {isConnected ? (
                 <div className="px-6 py-3 bg-green-100 text-green-700 rounded-lg font-semibold flex items-center gap-2">
                   <CheckCircle size={20} />
+<<<<<<< HEAD
                   {t('connected')}
+=======
+<<<<<<< HEAD
+                  {t('connected')}
+=======
+                  Connected
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                 </div>
               ) : (
                 <button
@@ -131,7 +213,15 @@ const UserProfile = () => {
                   className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
                 >
                   <UserPlus size={20} />
+<<<<<<< HEAD
                   {connecting ? t('sending') : t('connect')}
+=======
+<<<<<<< HEAD
+                  {connecting ? t('sending') : t('connect')}
+=======
+                  {connecting ? 'Sending...' : 'Connect'}
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                 </button>
               )}
             </div>
@@ -139,6 +229,10 @@ const UserProfile = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
         <div className="bg-white p-6 rounded-xl shadow-md interactive-card group relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-100 rounded-full -mr-12 -mt-12 opacity-50 group-hover:opacity-70 transition-opacity"></div>
@@ -146,6 +240,14 @@ const UserProfile = () => {
           <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
             <Star size={20} className="text-yellow-500" /> {t('skills')}
           </h3>
+<<<<<<< HEAD
+=======
+=======
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><Star size={20} /> Skills</h3>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
           <div className="flex flex-wrap gap-2">
             {user.skills && user.skills.length > 0 ? (
               user.skills.map((skill, index) => (
@@ -154,6 +256,10 @@ const UserProfile = () => {
                 </span>
               ))
             ) : (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
               <p className="text-gray-500 text-sm">{t('noSkillsListed')}</p>
             )}
           </div>
@@ -169,16 +275,46 @@ const UserProfile = () => {
           <p className="text-2xl font-bold text-black mb-2">{user.connections?.length || 0}</p>
           <p className="text-sm text-gray-600">{t('connectedUsers')}</p>
           </div>
+<<<<<<< HEAD
+=======
+=======
+              <p className="text-gray-500 text-sm">No skills listed</p>
+            )}
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-xl shadow-md">
+          <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><Users size={20} /> Connections</h3>
+          <p className="text-2xl font-bold text-black mb-2">{user.connections?.length || 0}</p>
+          <p className="text-sm text-gray-600">Connected users</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
 
         {user.createdProjects && user.createdProjects.length > 0 && (
           <div className="bg-white p-6 rounded-xl shadow-md md:col-span-2">
+<<<<<<< HEAD
             <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><CheckCircle size={20} /> {t('createdProjects')}</h3>
+=======
+<<<<<<< HEAD
+            <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><CheckCircle size={20} /> {t('createdProjects')}</h3>
+=======
+            <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><CheckCircle size={20} /> Created Projects</h3>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             <div className="space-y-3">
               {user.createdProjects.map((project) => (
                 <div key={project._id} className="p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                   <div className="font-bold text-black">{project.title}</div>
+<<<<<<< HEAD
                   <div className="text-xs text-gray-500">{t('status')}: {project.status}</div>
+=======
+<<<<<<< HEAD
+                  <div className="text-xs text-gray-500">{t('status')}: {project.status}</div>
+=======
+                  <div className="text-xs text-gray-500">Status: {project.status}</div>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                 </div>
               ))}
             </div>

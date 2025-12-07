@@ -2,12 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, Users, Briefcase, CheckCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import { useLanguage } from '../context/LanguageContext';
+=======
+<<<<<<< HEAD
+import { useLanguage } from '../context/LanguageContext';
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 import axios from 'axios';
 
 const JoinProject = () => {
   const navigate = useNavigate();
+<<<<<<< HEAD
   const { t } = useLanguage();
+=======
+<<<<<<< HEAD
+  const { t } = useLanguage();
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,6 +29,13 @@ const JoinProject = () => {
 
   useEffect(() => {
     fetchProjects();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     // Seed sample projects if none exist
     seedSampleProjects();
   }, []);
@@ -28,6 +49,16 @@ const JoinProject = () => {
     }
   };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+  }, []);
+
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   useEffect(() => {
     if (searchTerm) {
       const filtered = projects.filter(project =>
@@ -108,7 +139,15 @@ const JoinProject = () => {
     try {
       const userId = user?._id || user?.id;
       if (!user || !userId) {
+<<<<<<< HEAD
         alert(t('pleaseLoginToJoin'));
+=======
+<<<<<<< HEAD
+        alert(t('pleaseLoginToJoin'));
+=======
+        alert('Please login to join projects');
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         navigate('/login');
         return;
       }
@@ -118,22 +157,48 @@ const JoinProject = () => {
       });
       
       console.log('Joined project:', response.data);
+<<<<<<< HEAD
       alert(t('successfullyJoined'));
+=======
+<<<<<<< HEAD
+      alert(t('successfullyJoined'));
+=======
+      alert('Successfully joined the project! Redirecting to Ongoing Projects...');
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       
       navigate('/projects/ongoing');
     } catch (error) {
       console.error('Error joining project:', error);
       if (error.response?.status === 400) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         alert(error.response.data.error || t('alreadyMember'));
       } else if (error.response?.status === 404) {
         alert(t('projectNotFound'));
       } else {
         alert(t('failedToJoin'));
+<<<<<<< HEAD
+=======
+=======
+        alert(error.response.data.error || 'You are already a member of this project.');
+      } else if (error.response?.status === 404) {
+        alert('Project not found. It may have been deleted.');
+      } else {
+        alert('Failed to join project. Please try again.');
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       }
     }
   };
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     <div className="p-6 max-w-6xl mx-auto relative min-h-screen">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -159,6 +224,25 @@ const JoinProject = () => {
           <span>{t('joinAProject')}</span>
         </h1>
         <p className="text-black">{t('browseAvailableProjects')}</p>
+<<<<<<< HEAD
+=======
+=======
+    <div className="p-6 max-w-6xl mx-auto">
+      <button
+        onClick={() => navigate('/projects')}
+        className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6"
+      >
+        <ArrowLeft size={20} /> Back to Projects
+      </button>
+
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold mb-4 flex items-center gap-2 text-black">
+          <Briefcase className="text-blue-600" size={32} />
+          Join a Project
+        </h1>
+        <p className="text-black">Browse available projects and apply to join teams</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       </div>
 
       <div className="relative mb-6">
@@ -167,21 +251,49 @@ const JoinProject = () => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+<<<<<<< HEAD
           placeholder={t('searchProjects')}
+=======
+<<<<<<< HEAD
+          placeholder={t('searchProjects')}
+=======
+          placeholder="Search projects by title, description, or skills..."
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       {loading ? (
         <div className="text-center py-12">
+<<<<<<< HEAD
           <p className="text-black">{t('loadingProjects')}</p>
+=======
+<<<<<<< HEAD
+          <p className="text-black">{t('loadingProjects')}</p>
+=======
+          <p className="text-black">Loading projects...</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
       ) : filteredProjects.length === 0 ? (
         <div className="text-center py-12 bg-white rounded-xl shadow-md">
           <Briefcase size={48} className="mx-auto text-gray-400 mb-4" />
+<<<<<<< HEAD
           <p className="text-black text-lg">{t('noProjects')}</p>
           <p className="text-black text-sm mt-2">
             {searchTerm ? t('tryDifferentSearch') : t('noOpenProjects')}
+=======
+<<<<<<< HEAD
+          <p className="text-black text-lg">{t('noProjects')}</p>
+          <p className="text-black text-sm mt-2">
+            {searchTerm ? t('tryDifferentSearch') : t('noOpenProjects')}
+=======
+          <p className="text-black text-lg">No projects found</p>
+          <p className="text-black text-sm mt-2">
+            {searchTerm ? 'Try a different search term' : 'No open projects available at the moment'}
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
           </p>
         </div>
       ) : (
@@ -189,6 +301,10 @@ const JoinProject = () => {
           {filteredProjects.map((project) => (
             <div
               key={project._id || project.id}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
               className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-2xl transition-all interactive-card group relative overflow-hidden"
             >
               {/* Decorative gradient on hover */}
@@ -198,18 +314,45 @@ const JoinProject = () => {
                 <h3 className="text-xl font-bold text-black flex-1">{project.title}</h3>
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">
                   {project.status || t('open')}
+<<<<<<< HEAD
+=======
+=======
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition"
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-xl font-bold text-black flex-1">{project.title}</h3>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">
+                  {project.status || 'Open'}
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                 </span>
               </div>
               
               <p className="text-black text-sm mb-4 line-clamp-3">
+<<<<<<< HEAD
                 {project.description || t('noDescriptionAvailable')}
+=======
+<<<<<<< HEAD
+                {project.description || t('noDescriptionAvailable')}
+=======
+                {project.description || 'No description available'}
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
               </p>
 
               {project.requiredSkills && project.requiredSkills.length > 0 && (
                 <div className="mb-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Users size={16} className="text-gray-400" />
+<<<<<<< HEAD
                     <span className="text-xs font-semibold text-black">{t('requiredSkills')}:</span>
+=======
+<<<<<<< HEAD
+                    <span className="text-xs font-semibold text-black">{t('requiredSkills')}:</span>
+=======
+                    <span className="text-xs font-semibold text-black">Required Skills:</span>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.requiredSkills.map((skill, idx) => (
@@ -226,12 +369,26 @@ const JoinProject = () => {
 
               <button
                 onClick={() => handleJoinProject(project._id || project.id)}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
                 className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 flex items-center justify-center gap-2 transition-all transform group-hover:scale-105 shadow-lg"
               >
                 <CheckCircle size={18} />
                 {t('applyToJoin')}
               </button>
               </div>
+<<<<<<< HEAD
+=======
+=======
+                className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 flex items-center justify-center gap-2"
+              >
+                <CheckCircle size={18} />
+                Apply to Join
+              </button>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             </div>
           ))}
         </div>

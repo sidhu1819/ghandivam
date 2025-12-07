@@ -1,11 +1,34 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const { User, Project, Notification } = require('./models');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+=======
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+require('dotenv').config();
+
+const { User, Project } = require('./models');
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 
 const app = express();
 app.use(express.json()); 
@@ -13,6 +36,16 @@ app.use(cors());
 
 const MONGODB_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ghandivam';
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 console.log('🔌 Attempting to connect to MongoDB...');
 console.log(`📍 Connection URI: ${MONGODB_URI.replace(/\/\/[^:]+:[^@]+@/, '//***:***@')}`);
 
@@ -27,15 +60,55 @@ mongoose.connect(MONGODB_URI, {
     console.log(`🌐 Database Host: ${mongoose.connection.host}`);
     console.log(`🔢 Database Port: ${mongoose.connection.port}`);
     console.log(`📦 Database State: ${mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected'}`);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => {
+    console.log('✅ MongoDB Connected successfully');
+    console.log(`📊 Database: ${mongoose.connection.name}`);
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   })
   .catch(err => {
     console.error('❌ MongoDB Connection Error:', err.message);
     console.error('💡 Make sure MongoDB is running on your system');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     console.error('💡 Default connection: mongodb://127.0.0.1:27017/ghandivam');
     console.error('💡 You can set MONGO_URI in .env file or environment variables');
     console.error('⚠️  Server will continue but database features will not work');
     console.error('⚠️  To install MongoDB: https://www.mongodb.com/try/download/community');
     console.error('⚠️  Or start MongoDB service: net start MongoDB (Windows)');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    process.exit(1);
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   });
 
 mongoose.connection.on('error', (err) => {
@@ -46,6 +119,16 @@ mongoose.connection.on('disconnected', () => {
   console.warn('⚠️ MongoDB disconnected. Attempting to reconnect...');
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 
 // In-memory storage for OTPs (for development/demo purposes)
@@ -97,6 +180,22 @@ app.get('/', (req, res) => {
       users: ['/api/users', '/api/users/:id', '/api/users/:id/connect'],
       health: '/api/health'
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Ghandivam Backend is Running!',
+    database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
+    timestamp: new Date().toISOString()
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   });
 });
 
@@ -141,6 +240,10 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 app.post('/api/projects', authenticateToken, async (req, res) => {
   try {
     const userId = req.user.userId;
@@ -150,6 +253,18 @@ app.post('/api/projects', authenticateToken, async (req, res) => {
       status: req.body.status || 'Open',
       description: req.body.detailedDescription || req.body.shortDescription || req.body.description,
       members: req.body.members || [userId],
+<<<<<<< HEAD
+=======
+=======
+app.post('/api/projects', async (req, res) => {
+  try {
+    const projectData = {
+      ...req.body,
+      status: 'Active',
+      description: req.body.detailedDescription || req.body.shortDescription || req.body.description,
+      members: req.body.members || [],
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
       progress: req.body.progress || 0,
       completedTasks: req.body.completedTasks || 0,
       totalTasks: req.body.totalTasks || 15,
@@ -160,11 +275,20 @@ app.post('/api/projects', authenticateToken, async (req, res) => {
     const newProject = new Project(projectData);
     await newProject.save();
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     // Add project to user's createdProjects
     await User.findByIdAndUpdate(userId, {
       $push: { createdProjects: newProject._id }
     });
     
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     const populatedProject = await Project.findById(newProject._id)
       .populate('teamLeader', 'username')
       .populate('members', 'username');
@@ -175,7 +299,14 @@ app.post('/api/projects', authenticateToken, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Get all projects (for public/join projects page)
+=======
+<<<<<<< HEAD
+// Get all projects (for public/join projects page)
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 app.get('/api/projects', async (req, res) => {
   try {
     const projects = await Project.find().populate('teamLeader', 'username').populate('members', 'username');
@@ -185,6 +316,10 @@ app.get('/api/projects', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 // Get user-specific projects (for user's own projects)
 app.get('/api/projects/my-projects', authenticateToken, async (req, res) => {
   try {
@@ -218,6 +353,11 @@ app.get('/api/projects/my-ongoing', authenticateToken, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 app.get('/api/projects/:id', async (req, res) => {
   try {
     const project = await Project.findById(req.params.id).populate('teamLeader', 'username').populate('members', 'username');
@@ -247,7 +387,18 @@ app.post('/api/projects/:id/join', async (req, res) => {
       return res.status(400).json({ error: 'User is already a member' });
     }
 
+<<<<<<< HEAD
     const user = await User.findById(userId);
+=======
+<<<<<<< HEAD
+    const user = await User.findById(userId);
+=======
+<<<<<<< HEAD
+    const user = await User.findById(userId);
+=======
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     project.members.push(userId);
     
     if (project.status === 'Open') {
@@ -256,6 +407,13 @@ app.post('/api/projects/:id/join', async (req, res) => {
     
     await project.save();
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     // Create notification for project team leader
     if (project.teamLeader) {
       const notification = new Notification({
@@ -269,6 +427,14 @@ app.post('/api/projects/:id/join', async (req, res) => {
       await notification.save();
     }
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     const populatedProject = await Project.findById(project._id)
       .populate('teamLeader', 'username')
       .populate('members', 'username');
@@ -302,6 +468,16 @@ app.patch('/api/projects/:id', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 app.post('/api/auth/register', async (req, res) => {
   try {
     const { name, username, phoneNumber, email, password } = req.body;
@@ -577,6 +753,13 @@ app.post('/api/users/:id/connect', authenticateToken, async (req, res) => {
 
     await targetUser.save();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     // Create notification for the target user
     const notification = new Notification({
       userId: targetUserId,
@@ -587,6 +770,14 @@ app.post('/api/users/:id/connect', authenticateToken, async (req, res) => {
     });
     await notification.save();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     res.json({ message: 'Connection request sent successfully' });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -655,6 +846,17 @@ app.get('/api/users', authenticateToken, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 app.post('/api/rate-user', async (req, res) => {
   const { userId, points } = req.body;
   try {
@@ -669,6 +871,10 @@ app.post('/api/rate-user', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 // Forgot Password - Request Reset
 app.post('/api/auth/forgot-password', async (req, res) => {
   try {
@@ -757,6 +963,12 @@ app.post('/api/auth/reset-password', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 // Notification endpoints
 app.get('/api/notifications', authenticateToken, async (req, res) => {
   try {
@@ -879,6 +1091,14 @@ app.post('/api/projects/seed-sample', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

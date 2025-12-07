@@ -1,20 +1,41 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import { useLanguage } from '../context/LanguageContext';
 import { LogIn, User, Lock, AlertCircle, Mail, Phone } from 'lucide-react';
 import axios from 'axios';
+=======
+<<<<<<< HEAD
+import { useLanguage } from '../context/LanguageContext';
+import { LogIn, User, Lock, AlertCircle, Mail, Phone } from 'lucide-react';
+import axios from 'axios';
+=======
+import { LogIn, User, Lock, AlertCircle } from 'lucide-react';
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
+<<<<<<< HEAD
   const { t } = useLanguage();
+=======
+<<<<<<< HEAD
+  const { t } = useLanguage();
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotPasswordData, setForgotPasswordData] = useState({
     email: '',
@@ -23,6 +44,16 @@ const Login = () => {
   });
   const [forgotPasswordLoading, setForgotPasswordLoading] = useState(false);
   const [forgotPasswordMessage, setForgotPasswordMessage] = useState('');
+<<<<<<< HEAD
+=======
+=======
+
+  const demoCredentials = [
+    { username: 'demo', password: 'demo123', label: 'Demo User' },
+    { username: 'admin', password: 'admin123', label: 'Admin' }
+  ];
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +75,10 @@ const Login = () => {
     setLoading(false);
   };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     setForgotPasswordMessage('');
@@ -95,6 +130,25 @@ const Login = () => {
           </div>
           <h1 className="text-3xl font-bold text-black mb-2">{t('welcomeBack')}</h1>
           <p className="text-gray-600">{t('signInAccount')}</p>
+<<<<<<< HEAD
+=======
+=======
+  const fillDemoCredentials = (username, password) => {
+    setFormData({ username, password });
+    setError('');
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)' }}>
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <LogIn className="text-white" size={32} />
+          </div>
+          <h1 className="text-3xl font-bold text-black mb-2">Welcome Back</h1>
+          <p className="text-gray-600">Sign in to your Ghandivam account</p>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
 
         {error && (
@@ -107,7 +161,15 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-semibold text-black mb-2">
+<<<<<<< HEAD
               {t('usernameEmailPhone')}
+=======
+<<<<<<< HEAD
+              {t('usernameEmailPhone')}
+=======
+              Username / Email / Phone
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             </label>
             <div className="relative">
               <User className="absolute left-3 top-3 text-gray-400" size={20} />
@@ -117,12 +179,24 @@ const Login = () => {
                 value={formData.username}
                 onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
                 placeholder={t('usernameEmailPhone')}
+=======
+<<<<<<< HEAD
+                placeholder={t('usernameEmailPhone')}
+=======
+                placeholder="Enter username, email, or phone"
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
               />
             </div>
           </div>
 
           <div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             <div className="flex items-center justify-between mb-2">
               <label className="block text-sm font-semibold text-black">
                 {t('password')}
@@ -135,6 +209,14 @@ const Login = () => {
                 {t('forgotPassword')}
               </button>
             </div>
+<<<<<<< HEAD
+=======
+=======
+            <label className="block text-sm font-semibold text-black mb-2">
+              Password
+            </label>
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             <div className="relative">
               <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
@@ -143,7 +225,15 @@ const Login = () => {
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+<<<<<<< HEAD
                 placeholder={t('password')}
+=======
+<<<<<<< HEAD
+                placeholder={t('password')}
+=======
+                placeholder="Enter your password"
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
               />
             </div>
           </div>
@@ -153,6 +243,10 @@ const Login = () => {
             disabled={loading}
             className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
           >
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             {loading ? t('signingIn') : t('signIn')}
           </button>
         </form>
@@ -162,10 +256,45 @@ const Login = () => {
             {t('dontHaveAccount')}{' '}
             <Link to="/register" className="text-blue-600 font-semibold hover:underline">
               {t('signUp')}
+<<<<<<< HEAD
+=======
+=======
+            {loading ? 'Signing in...' : 'Sign In'}
+          </button>
+        </form>
+
+        <div className="mt-6">
+          <p className="text-sm text-gray-600 text-center mb-4">Demo Credentials:</p>
+          <div className="space-y-2">
+            {demoCredentials.map((demo, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => fillDemoCredentials(demo.username, demo.password)}
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 text-left text-sm"
+              >
+                <span className="font-semibold text-black">{demo.label}:</span>
+                <span className="text-gray-600 ml-2">{demo.username} / {demo.password}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{' '}
+            <Link to="/register" className="text-blue-600 font-semibold hover:underline">
+              Sign Up
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             </Link>
           </p>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 
       {/* Forgot Password Modal */}
       {showForgotPassword && (
@@ -260,6 +389,11 @@ const Login = () => {
           </div>
         </div>
       )}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     </div>
   );
 };

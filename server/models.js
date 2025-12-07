@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   name: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   phoneNumber: { type: String, required: true, unique: true },
@@ -9,8 +19,16 @@ const UserSchema = new mongoose.Schema({
   otp: { type: String },
   otpExpires: { type: Date },
   isVerified: { type: Boolean, default: false },
+<<<<<<< HEAD
   resetPasswordToken: { type: String },
   resetPasswordExpires: { type: Date },
+=======
+<<<<<<< HEAD
+  resetPasswordToken: { type: String },
+  resetPasswordExpires: { type: Date },
+=======
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
   trustPoints: { type: Number, default: 100 }, 
   skills: [String],
   createdProjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
@@ -21,6 +39,23 @@ const UserSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
   }],
   createdAt: { type: Date, default: Date.now }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+  username: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }, 
+  trustPoints: { type: Number, default: 100 }, 
+  skills: [String],
+  createdProjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }]
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 });
 
 const ProjectSchema = new mongoose.Schema({
@@ -59,6 +94,13 @@ const ProjectSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 const NotificationSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   type: { type: String, enum: ['connection_request', 'project_joined', 'project_invite'], required: true },
@@ -73,4 +115,18 @@ const User = mongoose.model('User', UserSchema);
 const Project = mongoose.model('Project', ProjectSchema);
 const Notification = mongoose.model('Notification', NotificationSchema);
 
+<<<<<<< HEAD
 module.exports = { User, Project, Notification };
+=======
+<<<<<<< HEAD
+module.exports = { User, Project, Notification };
+=======
+module.exports = { User, Project, Notification };
+=======
+const User = mongoose.model('User', UserSchema);
+const Project = mongoose.model('Project', ProjectSchema);
+
+module.exports = { User, Project };
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd

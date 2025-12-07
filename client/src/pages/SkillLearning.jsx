@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
 import React, { useState, useEffect } from 'react';
 import { Search, Play, Book, Upload, X, Calendar, Clock, Users, Award, CheckCircle, FileText, Video, Link as LinkIcon, User, Star } from 'lucide-react';
 import axios from 'axios';
@@ -131,11 +141,49 @@ const SkillLearning = () => {
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-black mb-2">Knowledge Center</h1>
           <p className="text-black">Acquire skills and earn credentials.</p>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+import React from 'react';
+import { Search, Play, Book, Upload } from 'lucide-react';
+
+const SkillLearning = () => {
+  const courses = [
+    { id: 1, title: "Advanced React Patterns", instructor: "Sarah Dev", type: "Live Class", time: "Starts in 10m" },
+    { id: 2, title: "AI for Beginners", instructor: "Dr. A. Smith", type: "Video Course", time: "Self-paced" },
+    { id: 3, title: "Full Stack Hackathon Guide", instructor: "Ghandivam Team", type: "Document", time: "Read now" },
+  ];
+
+  return (
+    <div className="p-6 max-w-6xl mx-auto">
+      {/* Header & Search */}
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-800">Knowledge Center</h1>
+          <p className="text-gray-500">Acquire skills and earn credentials.</p>
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
         </div>
         <div className="relative w-full md:w-96">
           <Search className="absolute left-3 top-3 text-gray-400" size={20} />
           <input 
             type="text" 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search for courses, documents..." 
@@ -735,8 +783,79 @@ const SkillLearning = () => {
           </div>
         </div>
       )}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+            placeholder="Search for courses..." 
+            className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <button className="bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-black">
+          <Upload size={18}/> Share Content
+        </button>
+      </div>
+
+      {/* Featured Live Class */}
+      <div className="bg-purple-700 text-white p-8 rounded-2xl mb-8 flex flex-col md:flex-row items-center justify-between">
+        <div>
+          <span className="bg-purple-500 px-3 py-1 rounded-full text-xs font-bold uppercase mb-2 inline-block">Live Now</span>
+          <h2 className="text-3xl font-bold mb-2">Mastering Node.js Streams</h2>
+          <p className="mb-6 opacity-90">Join expert developer John Doe for a live session with real-time AI subtitles.</p>
+          <button className="bg-white text-purple-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 flex items-center gap-2">
+             <Play size={20} fill="currentColor" /> Join Live Class
+          </button>
+        </div>
+        <div className="hidden md:block">
+            {/* Abstract visual for class */}
+            <div className="w-48 h-32 bg-purple-500 rounded-lg opacity-50"></div>
+        </div>
+      </div>
+
+      {/* Course List */}
+      <h3 className="text-xl font-bold mb-4">Recommended for you</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {courses.map(course => (
+          <div key={course.id} className="bg-white p-5 rounded-xl shadow-sm border hover:shadow-md transition">
+            <div className="flex justify-between items-start mb-4">
+               <div className={`p-2 rounded-lg ${course.type === 'Live Class' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}`}>
+                 {course.type === 'Live Class' ? <Play size={24}/> : <Book size={24}/>}
+               </div>
+               <span className="text-xs text-gray-400 font-semibold">{course.time}</span>
+            </div>
+            <h4 className="font-bold text-lg">{course.title}</h4>
+            <p className="text-sm text-gray-500 mb-4">By {course.instructor}</p>
+            <button className="w-full py-2 border border-gray-200 rounded-lg hover:bg-gray-50 font-medium text-sm">
+              View Details
+            </button>
+          </div>
+        ))}
+      </div>
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default SkillLearning;
+=======
+<<<<<<< HEAD
+export default SkillLearning;
+=======
+<<<<<<< HEAD
+export default SkillLearning;
+=======
+<<<<<<< HEAD
+export default SkillLearning;
+=======
+export default SkillLearning;
+>>>>>>> 15bede01c7ffb65f0f85a5665d68bbebfb4c56e4
+>>>>>>> 42b8c68a6b3e3ceb41f68f225e722ab4df25a304
+>>>>>>> 41cbcef940efb197ef1c00de637fe545aa8e93ea
+>>>>>>> 3d8de14eeb27d6b293c8027db75b8cf0eb66facd
